@@ -21,7 +21,7 @@ const messageReducer = (state = initState, action) => {
 };
 export const fetchmessage = () => async (dispatch) => {
   dispatch({ type: 'FETCHING_MESSAGE' });
-  await fetch('')
+  await fetch('https://kingqabil-api.herokuapp.com/api/messages')
     .then((response) => response.json())
     .then((data) => {
       dispatch({ type: 'COMPLETE_MESSAGE', payload: data });
